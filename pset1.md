@@ -1,29 +1,23 @@
-Markdown explicando e documentando para que serve o subdiretório
+# GitHub Markdown 🎓 
 
-teste markdown
+## - Aluno: Caroline Andrade Silva,
+## - Professor: Abrantes Araujo Silva Filho,
+## - Monitora: Suellen Miranda Amorim,
+## - Turma: CC1Mb.
 
-## Currículos
+### Discrição geral
+#### Objetivos principais do Pset1
 
-### Dados Pessoais
+**1. Fazer com que você aprenda sobre sistemas de controles de versões, em especial o Git (https://git-scm.com/) e o serviço web GitHub (https://github.com) e, ainda, aprender sobre Markdown;**
+<!-- serve para ocutar conteúdos -->
 
-- Nome: Caroline Andrade Silva;
-- Telefone:(27)98871-8491;
-- Email: Carolineleticia2407@gmail.com;
-- Endereço: Vitória-ES
-- Data de nascimento:24/09/2003
+**2. Fazer com que você aprenda a implementar projetos lógicos em diversos Sistemas de Gerenciamento de Bancos de Dados (SGBD), utilizando os SGBD relacionais mais comuns e importantes hoje em dia: (PostgreSQL, Oracle, MariaBD/MySQL);**
 
- ![foto_perfil](https://user-images.githubusercontent.com/102956881/161610414-8f2d02a9-ab1b-4803-848b-9590a28ea1b8.jpg) 
- 
-### Formação Acadêmica
 
-- 2009-2013: Do pré ao 4° ano estudei na escola Crescer-PHD em Vitória- ES;                                                                               
-- 2014-2021: Do 5° ano ao 3° ano do ensino médio estudei no Centro Educacional Charles Darwin em Vitória-ES;
-- 2010-2019: Curso de inglês;
-- 2022: Cursando o 1° período da graduação em Ciência da Computação na Universidade Vila Velha no ES;
-- 2025: Término do curso.
+**3. Fazer com que você reflita sobre diversos problemas que podem ocorrer se o projeto lógico está mal preparado;**
 
-### Habilidades Interpessoais
+    SQL power Architect- Elmasri
 
-- Responsabilidade;
-- Rápido Aprendizado
-- Nível de programação básico
+**4. Fazer com que você aprenda a Structured Query Language (SQL) em nível básico e intermediário**
+
+**5.**

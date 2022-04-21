@@ -21,4 +21,4 @@
 
 *5.*
 
-### Mudanças necessárias nos scripts/tabela feitas por mim:
+### Mudanças necessárias nos scripts/tabela feitas por mim

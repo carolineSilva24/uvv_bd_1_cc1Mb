@@ -1,12 +1,11 @@
 # GitHub Markdown 🎓 
 
-## - Aluno: Caroline Andrade Silva,
-## - Professor: Abrantes Araujo Silva Filho,
-## - Monitora: Suellen Miranda Amorim,
-## - Turma: CC1Mb.
+## Aluno: Caroline Andrade Silva;
+## Professor: Abrantes Araujo Silva Filho;
+## Monitora: Suellen Miranda Amorim;
+## Turma: CC1Mb.
 
-### Discrição geral
-#### Objetivos principais do Pset1
+### Discrição geral do Pset1
 
 **1. Fazer com que você aprenda sobre sistemas de controles de versões, em especial o Git (https://git-scm.com/) e o serviço web GitHub (https://github.com) e, ainda, aprender sobre Markdown;**
 <!-- serve para ocutar conteúdos -->
@@ -20,4 +19,6 @@
 
 **4. Fazer com que você aprenda a Structured Query Language (SQL) em nível básico e intermediário**
 
-**5.**
+*5.*
+
+### Mudanças necessárias nos scripts/tabela feitas por mim:

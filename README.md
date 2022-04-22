@@ -7,18 +7,10 @@
 
 ### Discrição geral do Pset1
 
-**1. Fazer com que você aprenda sobre sistemas de controles de versões, em especial o Git (https://git-scm.com/) e o serviço web GitHub (https://github.com) e, ainda, aprender sobre Markdown;**
-<!-- serve para ocutar conteúdos -->
-
-**2. Fazer com que você aprenda a implementar projetos lógicos em diversos Sistemas de Gerenciamento de Bancos de Dados (SGBD), utilizando os SGBD relacionais mais comuns e importantes hoje em dia: (PostgreSQL, Oracle, MariaBD/MySQL);**
-
-
-**3. Fazer com que você reflita sobre diversos problemas que podem ocorrer se o projeto lógico está mal preparado;**
-
-    SQL power Architect- Elmasri
-
-**4. Fazer com que você aprenda a Structured Query Language (SQL) em nível básico e intermediário**
-
-*5.*
+1. Aprendi a usar o github e o Markdown;
+2. Aprendi a implementar projetos lógicos utilizando os SGBD relacionais PostgreSQL e o MariaBD/MySQL;
+3. Conheci as dificuldades de criar um projeto lógico e suas consequências;
+4. Aprendi a usar um pouco do Structured Query Language (SQL) para criar os scripts no MariaDB e no PostgreSQL.
 
 ### Mudanças necessárias nos scripts/tabela feitas por mim
+Eu precisei diminuir os comentários no power architect, porque cabiam no máximo 60 characteres. Aumentei o número de characteres do endereço na tabela funcionário para 50, pois com 30 o meu deu erro falando que não dava para inserir todo o endereço. Alterei também os dados de alguns cpf_supervisor da tabela funcionário de acordo com o numero_departamento e o cpf_gerente da tabela departamento que estavam dando erro por estar diferente do cpf do número do departamento.

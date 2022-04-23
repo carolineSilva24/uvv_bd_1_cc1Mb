@@ -109,8 +109,6 @@ ALTER TABLE localizacoes_departamento COMMENT 'Tabela que armazena as possíveis
  ALTER TABLE localizacoes_departamento MODIFY COLUMN numero_departamento integer COMMENT 'Número do departamento. Faz parta da PK desta tabela e também é uma FK para a tabela departamento.'; 
  ALTER TABLE localizacoes_departamento MODIFY COLUMN local varchar(15)COMMENT 'Localização do departamento. Faz parte da PK desta tabela.';
 
--- adicionar os dados na tabela MariaDB
-
 INSERT INTO funcionario(primeiro_nome,nome_meio,ultimo_nome,cpf,data_nascimento,endereco,sexo,salario,cpf_supervisor,numero_departamento) VALUES (
 'João','B','Silva','12345678966','1965-01-09','Rua das Flores,751,São Paulo,SP','M','30000','33344555587','5'),
 ('Fernando','T','Wong','33344555587','1955-12-08','Rua da Lapa,34,São Paulo,SP','M','40000','33344555587','5'),
@@ -121,8 +119,7 @@ INSERT INTO funcionario(primeiro_nome,nome_meio,ultimo_nome,cpf,data_nascimento,
 ('André','V','Pereira','98798798733','1969-03-29','Rua Timbira,35,São Paulo,SP','M','25000','98765432168','4');
 INSERT INTO funcionario(primeiro_nome,nome_meio,ultimo_nome,cpf,data_nascimento,endereco,sexo,salario,cpf_supervisor,numero_departamento) VALUES (
 'Jorge','E','Brito','88866555576','1937-11-10','Rua do Horto,35,São Paulo,SP','M','55000','88866555576','1');
-INSERT INTO funcionario(primeiro_nome,nome_meio,ultimo_nome,cpf,data_nascimento,endereco,sexo,salario,cpf_supervisor,numero_departamento) VALUES (
-'Jennifer','S','Souza','98765432168','1941-06-20','Av.Arthur de Lima,54,Santo André,Sp','F','43000','98765432168','4');
+('Jennifer','S','Souza','98765432168','1941-06-20','Av.Arthur de Lima,54,Santo André,Sp','F','43000','98765432168','4');
 
 INSERT INTO departamento (nome_departamento,numero_departamento,cpf_gerente,data_inicio_gerente) VALUES (
 'Pesquisa','5','33344555587','1988-05-22'),
@@ -175,7 +172,6 @@ INSERT INTO trabalha_em (cpf_funcionario,numero_projeto,horas) VALUES (
 INSERT INTO trabalha_em (cpf_funcionario,numero_projeto,horas) VALUES (
 '88866555576','20','0');
 
--- foreign keys
 ALTER TABLE trabalha_em ADD CONSTRAINT funcionario_trabalha_em_fk
   FOREIGN KEY (cpf_funcionario)
   REFERENCES funcionario (cpf)

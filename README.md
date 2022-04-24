@@ -2,8 +2,7 @@
 
 ### Aluno: Caroline Andrade Silva; 
 ### Professor: Abrantes Araujo Silva Filho;
-### Monitora: Suellen Miranda Amorim;
-### Turma: CC1Mb.
+### Monitora: Suellen Miranda Amorim.
 
 ### Como está organizado
 Tem o arquivo readme onde tem meu nome, nome do professor e da monitora, a discição geral com informações  de mudanças feitas por mim e a orgnização. Dentro da pasta Pset estão os scrits dos SGBD relacionais PostgreSQL, MariaDB e Sql Power Architect e um arquivo de como rodar e o que tem cada script.  

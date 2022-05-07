@@ -1,4 +1,4 @@
-# GitHub Markdown 🎓 
+# GitHub Markdown Pset 1 🎓 
 
 #### Aluno: Caroline Andrade Silva; 
 #### Professor: Abrantes Araujo Silva Filho;

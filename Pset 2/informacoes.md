@@ -1,7 +1,7 @@
 # Documentação PSet 2
-### Aluno: Caroline Andrade Silva
+### Aluno: Caroline Andrade Silva - CC1Mb
 ### Professor: Abrantes Araújo Silva Filho
-### Turma: CC1Mb
+### Monitora: Suellen Miranda Amorim
 
 #### Explicação
  Esse subdiretório é a resolução do trabalho PSet 2, que contêm varios relatórios escrito no formato SQL pelo SGBD MariaDB, que quando colado no terminal aparecerá uma tabela com o que cada questão pediu. Os dados e as tabelas foram implementados anteriormente no banco de dados "uvv" do modelo MySQL criado por mim durante o PSet 1.

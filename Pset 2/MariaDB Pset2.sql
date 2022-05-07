@@ -179,12 +179,12 @@ SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) as Numero_
  GROUP BY numero_e_nome_departamento;
 
 -- Questão 15
--- esta faltando duas colunas com numero projeto 20 e uma do numero projeto 10
+-- Todos os funcionários estão alocados em algum projeto.
 SELECT concat(f.primeiro_nome,' ',f.nome_meio,' ',f.ultimo_nome) AS nome_completo
-,d.nome_departamento, p.nome_projeto
+ ,d.nome_departamento, p.nome_projeto
  FROM funcionario f
- JOIN trabalha_em t ON t.cpf_funcionario = f.cpf 
- JOIN projeto p ON t.numero_projeto = p.numero_projeto 
- JOIN departamento d ON d.numero_departamento = f.numero_departamento 
- WHERE f.numero_departamento = p.numero_departamento;
-
+ INNER JOIN trabalha_em t ON t.cpf_funcionario = f.cpf 
+ INNER JOIN projeto p ON t.numero_projeto = p.numero_projeto 
+ INNER JOIN departamento d ON d.numero_departamento = f.numero_departamento 
+ WHERE f.numero_departamento = d.numero_departamento
+ ORDER BY nome_completo;

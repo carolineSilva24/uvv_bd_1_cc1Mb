@@ -1,4 +1,4 @@
-# Documentação PSet 2
+# Documentação PSet 2 📃
 ### Aluno: Caroline Andrade Silva - CC1Mb
 ### Professor: Abrantes Araújo Silva Filho
 ### Monitora: Suellen Miranda Amorim

@@ -1,6 +1,6 @@
 -- Pset 2 
  -- Resolução das questões em script
-
+ 
 -- Questão 1
 SELECT AVG(salario) AS media_salarial ,numero_departamento
  FROM funcionario
@@ -22,6 +22,7 @@ SELECT
 -- Adicionar a coluna idade na tabela funcionario para ficar com o valor da idade certinha.
 ALTER TABLE funcionario 
  ADD idade int(3);
+ 
 -- Estou colocando no resultado um número inteiro por ser uma idade, e escrevendo logo embaixo no update para adicionar o valor da idade na nova coluna 'idade' da tabela.
 SELECT  datediff ('2022-05-03','1965-01-09')/365.25 AS 'idade de João';
 UPDATE funcionario set idade = 57 WHERE primeiro_nome = 'João';
@@ -39,6 +40,7 @@ SELECT datediff ('2022-05-03','1937-11-10')/365.25 AS 'idade de Jorge';
 UPDATE funcionario set idade = 84 WHERE primeiro_nome = 'Jorge';
 SELECT datediff ('2022-05-03','1941-06-20')/365.25 AS 'idade de Jennifer';
 UPDATE funcionario set idade = 80 WHERE primeiro_nome = 'Jennifer';
+
  -- Após incluir as idades, agora retornei as colunas separando por nome de cada departamento e os dados pessoais pedidos.
 SELECT d.nome_departamento
  ,concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS nome_completo, f.data_nascimento, f.idade, f.salario
@@ -68,6 +70,7 @@ SELECT d.nome_departamento,concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ulti
 -- Adicionar a coluna idade_dependente na tabela dependente para ficar no valor certinho.
 ALTER TABLE dependente  
  ADD idade_dependente int(3);
+ 
 -- Adicionei o valor da idade inteira para ser adicionado na coluna, depois de ter calculado o valor diminuindo do dia que eu fiz essa questão da data de nascimento.
 SELECT datediff ('2022-05-03','1986-04-05')/365.25 AS 'idade de Alicia.W';
 UPDATE dependente set idade_dependente = 36 WHERE nome_dependente = 'Alicia' and cpf_funcionario ='33344555587';
@@ -109,7 +112,7 @@ SELECT dpt.nome_departamento
 
 -- Questão 8
 SELECT d.nome_departamento
- ,concat('(Nº',t.numero_projeto, ')', p.nome_projeto) as numero_e_nome_projeto
+ ,concat('(Nº',t.numero_projeto, ')', p.nome_projeto) AS numero_e_nome_projeto
  ,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  ,t.horas 
  FROM departamento AS d
@@ -119,7 +122,7 @@ SELECT d.nome_departamento
  ORDER BY nome_departamento;
 
 -- Questão 9
-SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) as horas_trabalhadas
+SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) AS horas_trabalhadas
  FROM departamento AS d
  NATURAL JOIN projeto AS p
  NATURAL JOIN trabalha_em AS t
@@ -127,7 +130,7 @@ SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) as horas_trabalhadas
  ORDER BY nome_departamento;
 
  -- Questão 10
-SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) as Numero_e_nome_departamento
+SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_e_nome_departamento
  ,AVG(SALARIO) as media_salarial 
  FROM funcionario 
  NATURAL JOIN departamento as d
@@ -137,8 +140,8 @@ SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) as Numero_
 SELECT concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  ,p.nome_projeto 
  ,t.horas *50 AS valor_recebido
- FROM trabalha_em as t
- NATURAL JOIN projeto as p 
+ FROM trabalha_em AS t
+ NATURAL JOIN projeto AS p 
  INNER JOIN funcionario AS f ON f.cpf = t.cpf_funcionario
  ORDER BY nome_completo;
 

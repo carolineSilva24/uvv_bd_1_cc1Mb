@@ -13,7 +13,7 @@ SELECT
  WHEN 'F' THEN 'Mulheres'
  ELSE ''
  END sexo
- ,AVG(salario) as media_salarial
+ ,AVG(salario) AS media_salarial
  FROM funcionario f
  GROUP BY sexo;
 
@@ -73,7 +73,7 @@ ALTER TABLE dependente
  
 -- Adicionei o valor da idade inteira para ser adicionado na coluna, depois de ter calculado o valor diminuindo do dia que eu fiz essa questão da data de nascimento.
 SELECT datediff ('2022-05-03','1986-04-05')/365.25 AS 'idade de Alicia.W';
-UPDATE dependente set idade_dependente = 36 WHERE nome_dependente = 'Alicia' and cpf_funcionario ='33344555587';
+UPDATE dependente set idade_dependente = 36 WHERE nome_dependente = 'Alicia' AND cpf_funcionario ='33344555587';
 SELECT datediff ('2022-05-03','1958-05-03')/365.25 AS 'idade de Janaína';
 UPDATE dependente set idade_dependente = 64  WHERE nome_dependente = 'Janaína';
 SELECT datediff ('2022-05-03','1983-10-25')/365.25 AS 'idade de Tiago';
@@ -81,7 +81,7 @@ UPDATE dependente set idade_dependente = 38 WHERE nome_dependente = 'Tiago';
 SELECT datediff ('2022-05-03','1942-02-28')/365.25 AS 'idade de Antônio';
 UPDATE dependente set idade_dependente = 80  WHERE nome_dependente = 'Antônio';
 SELECT datediff ('2022-05-03','1988-12-30')/365.25 AS 'idade de Alicia.S';
-UPDATE dependente set idade_dependente = 33  WHERE nome_dependente = 'Alicia' and cpf_funcionario ='12345678966';
+UPDATE dependente set idade_dependente = 33  WHERE nome_dependente = 'Alicia' AND cpf_funcionario ='12345678966';
 SELECT datediff ('2022-05-03','1967-05-05')/365.25 AS 'idade de Elizabeth';
 UPDATE dependente set idade_dependente = 54  WHERE nome_dependente = 'Elizabeth';
 SELECT datediff ('2022-05-03','1988-01-04')/365.25 AS 'idade de Michael';
@@ -131,9 +131,9 @@ SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) AS horas_trabalhadas
 
  -- Questão 10
 SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_e_nome_departamento
- ,AVG(SALARIO) as media_salarial 
+ ,AVG(SALARIO) AS media_salarial 
  FROM funcionario 
- NATURAL JOIN departamento as d
+ NATURAL JOIN departamento AS d
  GROUP BY d.nome_departamento;
 
 -- Questão 11
@@ -175,9 +175,9 @@ SELECT concat(dpd.nome_dependente, " ",f.nome_meio, ". ",f.ultimo_nome, " (depen
  ORDER BY idade DESC;
  
 -- Questão 14
-SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) as Numero_e_nome_departamento
+SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_e_nome_departamento
  ,count(*) AS quantidade_de_funcionarios
- FROM departamento as d
+ FROM departamento AS d
  JOIN funcionario f ON (f.numero_departamento = d.numero_departamento)
  GROUP BY numero_e_nome_departamento;
 

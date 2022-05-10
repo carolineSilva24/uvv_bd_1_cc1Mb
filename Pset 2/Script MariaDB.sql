@@ -111,40 +111,40 @@ SELECT dpt.nome_departamento
  WHERE dpd.nome_dependente IS null;
 
 -- Questão 8
-SELECT distinct d.nome_departamento
+SELECT DISTINCT d.nome_departamento
  ,concat('(Nº',t.numero_projeto, ')', p.nome_projeto) AS numero_e_nome_projeto
  ,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  ,t.horas 
  FROM funcionario AS f
- INNER join departamento AS d
+ INNER JOIN departamento AS d
  INNER JOIN projeto AS p
  INNER JOIN trabalha_em AS t
  INNER JOIN funcionario ON f.cpf = t.cpf_funcionario
  WHERE f.numero_departamento = d.numero_departamento
- and p.numero_projeto = t.numero_projeto 
- and f.cpf = t.cpf_funcionario 
+ AND p.numero_projeto = t.numero_projeto 
  ORDER BY p.numero_projeto;
 
 -- Questão 9
 SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) AS horas_trabalhadas
- FROM departamento AS d
- NATURAL JOIN projeto AS p
- NATURAL JOIN trabalha_em AS t
- GROUP BY p.nome_projeto , d.nome_departamento;
+ FROM trabalha_em AS t
+ INNER JOIN projeto AS p ON p.numero_projeto = t.numero_projeto 
+ INNER JOIN departamento AS d ON p.numero_departamento = d.numero_departamento
+ GROUP BY t.numero_projeto, p.nome_projeto , d.nome_departamento;
 
  -- Questão 10
 SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_e_nome_departamento
  ,AVG(SALARIO) AS media_salarial 
- FROM funcionario 
- NATURAL JOIN departamento AS d
- GROUP BY d.nome_departamento;
+ FROM funcionario AS f
+ INNER JOIN departamento AS d ON f.numero_departamento = d.numero_departamento
+ GROUP BY d.nome_departamento
+ ORDER BY numero_e_nome_departamento;
 
 -- Questão 11
 SELECT concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  ,p.nome_projeto 
  ,t.horas *50 AS valor_recebido
- FROM trabalha_em AS t
- NATURAL JOIN projeto AS p 
+ FROM trabalha_em AS t 
+ INNER JOIN projeto AS p ON p.numero_projeto = t.numero_projeto
  INNER JOIN funcionario AS f ON f.cpf = t.cpf_funcionario
  ORDER BY nome_completo;
 
@@ -152,8 +152,8 @@ SELECT concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_co
 SELECT d.nome_departamento, p.nome_projeto
  ,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  FROM trabalha_em AS t
- NATURAL JOIN projeto AS p 
- NATURAL JOIN departamento AS d
+ INNER JOIN projeto AS p ON p.numero_projeto = t.numero_projeto
+ INNER JOIN departamento AS d ON d.numero_departamento = p.numero_departamento
  INNER JOIN funcionario AS f ON f.cpf = t.cpf_funcionario
  WHERE t.horas is NULL ;
 

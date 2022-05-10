@@ -121,7 +121,8 @@ SELECT d.nome_departamento
  INNER JOIN trabalha_em AS t
  INNER JOIN funcionario AS f ON f.cpf = t.cpf_funcionario
  WHERE f.numero_departamento = d.numero_departamento
- and 
+ and p.numero_projeto = t.numero_projeto 
+ and f.cpf = t.cpf_funcionario 
  ORDER BY p.numero_projeto;
 
 -- Questão 9

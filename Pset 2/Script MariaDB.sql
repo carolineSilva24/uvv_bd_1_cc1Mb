@@ -130,8 +130,7 @@ SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) AS horas_trabalhadas
  FROM departamento AS d
  NATURAL JOIN projeto AS p
  NATURAL JOIN trabalha_em AS t
- GROUP BY p.nome_projeto , d.nome_departamento 
- ORDER BY nome_departamento;
+ GROUP BY p.nome_projeto , d.nome_departamento;
 
  -- Questão 10
 SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_e_nome_departamento

@@ -111,15 +111,15 @@ SELECT dpt.nome_departamento
  WHERE dpd.nome_dependente IS null;
 
 -- Questão 8
-SELECT d.nome_departamento
+SELECT distinct d.nome_departamento
  ,concat('(Nº',t.numero_projeto, ')', p.nome_projeto) AS numero_e_nome_projeto
  ,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  ,t.horas 
  FROM funcionario AS f
- inner join departamento AS d
+ INNER join departamento AS d
  INNER JOIN projeto AS p
  INNER JOIN trabalha_em AS t
- INNER JOIN funcionario AS f ON f.cpf = t.cpf_funcionario
+ INNER JOIN funcionario ON f.cpf = t.cpf_funcionario
  WHERE f.numero_departamento = d.numero_departamento
  and p.numero_projeto = t.numero_projeto 
  and f.cpf = t.cpf_funcionario 

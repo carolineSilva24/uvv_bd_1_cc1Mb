@@ -115,11 +115,14 @@ SELECT d.nome_departamento
  ,concat('(Nº',t.numero_projeto, ')', p.nome_projeto) AS numero_e_nome_projeto
  ,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo 
  ,t.horas 
- FROM departamento AS d
- NATURAL JOIN projeto AS p
- NATURAL JOIN trabalha_em AS t
+ FROM funcionario AS f
+ inner join departamento AS d
+ INNER JOIN projeto AS p
+ INNER JOIN trabalha_em AS t
  INNER JOIN funcionario AS f ON f.cpf = t.cpf_funcionario
- ORDER BY nome_departamento;
+ WHERE f.numero_departamento = d.numero_departamento
+ and 
+ ORDER BY p.numero_projeto;
 
 -- Questão 9
 SELECT p.nome_projeto , d.nome_departamento , SUM(t.horas) AS horas_trabalhadas

@@ -19,12 +19,12 @@ SELECT
 
 -- Questão 3 
 -- OBS: Antes de fazer a questão pedida eu calculei e adicionei as idades dos funcionarios,
--- Adicionar a coluna idade na tabela funcionario para ficar com o valor da idade certinha.
+-- O comando abaixo serve para adicionar a coluna idade na tabela funcionario.
 ALTER TABLE funcionario 
  ADD idade int(3);
  
--- Estou colocando no resultado um número inteiro por ser uma idade, e escrevendo logo embaixo no update para adicionar o valor da idade na nova coluna 'idade' da tabela.
-SELECT  datediff ('2022-05-03','1965-01-09')/365.25 AS 'idade de João';
+-- Estou colocando no resultado um número inteiro por ser uma idade, e escrevendo logo embaixo no update para adicionar o valor da idade na nova coluna 'idade' da tabela Funcionario.
+SELECT datediff ('2022-05-03','1965-01-09')/365.25 AS 'idade de João';
 UPDATE funcionario set idade = 57 WHERE primeiro_nome = 'João';
 SELECT datediff ('2022-05-03','1955-12-08')/365.25 AS 'idade de fernando';
 UPDATE funcionario set idade = 66 WHERE primeiro_nome = 'Fernando';
@@ -43,23 +43,23 @@ UPDATE funcionario set idade = 80 WHERE primeiro_nome = 'Jennifer';
 
  -- Após incluir as idades, agora retornei as colunas separando por nome de cada departamento e os dados pessoais pedidos.
 SELECT d.nome_departamento
- ,concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS nome_completo, f.data_nascimento, f.idade, f.salario
+ ,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo, f.data_nascimento, f.idade, f.salario
  FROM departamento d
  INNER JOIN funcionario f ON d.numero_departamento=f.numero_departamento;
 
 -- Questão 4
-SELECT concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS nome_completo,idade,salario AS salario_atual, salario *1.20 AS salario_reajustado
+SELECT concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo,idade,salario AS salario_atual, salario *1.20 AS salario_reajustado
  FROM funcionario f
  WHERE salario < 35000 
  UNION
-SELECT concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS nome_completo,idade,salario AS salario_atual,salario *1.15 AS salario_reajustado
+SELECT concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_completo,idade,salario AS salario_atual, salario *1.15 AS salario_reajustado
  FROM funcionario f
  WHERE salario >= 35000;
 
 -- Questão 5
- WITH gerente AS (SELECT concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS nome,
+WITH gerente AS (SELECT concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome,
  f.cpf FROM funcionario f)
-SELECT d.nome_departamento,concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ultimo_nome) AS nome_funcionario,
+SELECT d.nome_departamento,concat(f.primeiro_nome, ' ', f.nome_meio, '. ', f.ultimo_nome) AS nome_funcionario,
  g.nome AS nome_gerente
  FROM departamento d
  INNER JOIN funcionario f ON f.numero_departamento = d.numero_departamento
@@ -67,7 +67,7 @@ SELECT d.nome_departamento,concat(f.primeiro_nome, ' ', f.nome_meio, ' ', f.ulti
  ORDER BY d.nome_departamento ASC, f.salario DESC;
 
 -- Questão 6
--- Adicionar a coluna idade_dependente na tabela dependente para ficar no valor certinho.
+-- O comando abaixo foi utilizado para adicionar a coluna idade_dependente na tabela dependente.
 ALTER TABLE dependente  
  ADD idade_dependente int(3);
  
@@ -88,7 +88,7 @@ SELECT datediff ('2022-05-03','1988-01-04')/365.25 AS 'idade de Michael';
 UPDATE dependente set idade_dependente = 34 WHERE nome_dependente = 'Michael';
 
 SELECT dpt.nome_departamento
- ,concat(f.primeiro_nome, " ", f.nome_meio, " ", f.ultimo_nome) AS nome_funcionario
+ ,concat(f.primeiro_nome, " ", f.nome_meio, ". ", f.ultimo_nome) AS nome_funcionario
  ,concat(dpd.nome_dependente, " ",f.nome_meio, ". ",f.ultimo_nome) AS nome_completo_dependente
  ,dpd.idade_dependente
  ,CASE dpd.sexo
@@ -186,7 +186,7 @@ SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_
 
 -- Questão 15
 -- Todos os funcionários estão alocados em algum projeto.
-SELECT concat(f.primeiro_nome,' ',f.nome_meio,' ',f.ultimo_nome) AS nome_completo
+SELECT concat(f.primeiro_nome,' ',f.nome_meio,'. ',f.ultimo_nome) AS nome_completo_funcionario
  ,d.nome_departamento, p.nome_projeto
  FROM funcionario f
  INNER JOIN trabalha_em t ON t.cpf_funcionario = f.cpf 

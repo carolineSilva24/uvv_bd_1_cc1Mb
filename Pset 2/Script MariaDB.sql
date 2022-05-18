@@ -189,7 +189,7 @@ SELECT concat('(Nº',d.numero_departamento, ')', d.nome_departamento) AS Numero_
 SELECT concat(f.primeiro_nome,' ',f.nome_meio,'. ',f.ultimo_nome) AS nome_completo_funcionario
  ,d.nome_departamento, p.nome_projeto
  FROM funcionario f
- INNER JOIN trabalha_em t ON t.cpf_funcionario = f.cpf 
+ LEFT JOIN trabalha_em t ON t.cpf_funcionario = f.cpf 
  INNER JOIN projeto p ON t.numero_projeto = p.numero_projeto 
  INNER JOIN departamento d ON d.numero_departamento = f.numero_departamento 
  WHERE f.numero_departamento = d.numero_departamento
